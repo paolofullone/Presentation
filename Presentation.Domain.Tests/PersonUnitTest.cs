@@ -1,7 +1,6 @@
 using FluentAssertions;
 using Presentation.Domain.Entities;
 using Presentation.Domain.Validation;
-using static System.Net.WebRequestMethods;
 
 namespace Presentation.Domain.Tests
 {

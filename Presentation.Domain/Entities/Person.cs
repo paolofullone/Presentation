@@ -4,12 +4,12 @@ namespace Presentation.Domain.Entities
 {
     public sealed class Person : Entity
     {
-        public string FullName { get; private set; } = string.Empty;
-        public string Email { get; private set; } = string.Empty;
-        public string City { get; private set; } = string.Empty;
-        public string State { get; private set; } = string.Empty;
-        public string LinkedinUrl { get; private set; } = string.Empty;
-        public DateTime BirhtDate { get; private set; }
+        public string FullName { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
+        public string City { get; set; } = string.Empty;
+        public string State { get; set; } = string.Empty;
+        public string LinkedinUrl { get; set; } = string.Empty;
+        public DateTime BirthDate { get; set; }
 
         public Person(string fullName, string email, string city, string state, string linkedinUrl, DateTime birhtDate)
         {
@@ -43,7 +43,7 @@ namespace Presentation.Domain.Entities
             City = city;
             State = state;
             LinkedinUrl = linkedinUrl!;
-            BirhtDate = birhtDate;
+            BirthDate = birhtDate;
         }
     }
 

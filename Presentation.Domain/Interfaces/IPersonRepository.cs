@@ -2,12 +2,12 @@
 
 namespace Presentation.Domain.Interfaces
 {
-    public interface IPerson
+    public interface IPersonRepository
     {
         Task<IEnumerable<Person>> GetPersonsAsync();
-        Task<Person> GetPersonAsync(int id);
+        Task<Person> GetPersonByIdAsync(int? id);
         Task<Person> AddPersonAsync(Person person);
         Task<Person> UpdatePersonAsync(Person person);
-        Task<Person> RemovePersonAsync(int id);
+        Task<Person> RemovePersonAsync(Person person);
     }
 }
