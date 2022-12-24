@@ -11,9 +11,9 @@ namespace Presentation.Domain.Entities
         public string LinkedinUrl { get; set; } = string.Empty;
         public DateTime BirthDate { get; set; }
 
-        public Person(string fullName, string email, string city, string state, string linkedinUrl, DateTime birhtDate)
+        public Person(string fullName, string email, string city, string state, string linkedinUrl, DateTime birthDate)
         {
-            ValidateDomain(fullName, email, city, state, linkedinUrl, birhtDate);
+            ValidateDomain(fullName, email, city, state, linkedinUrl, birthDate);
         }
 
         public Person(int id, string fullName, string email, string city, string state, string linkedinUrl, DateTime birhtDate)
