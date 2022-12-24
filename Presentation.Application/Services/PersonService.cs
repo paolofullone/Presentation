@@ -40,7 +40,7 @@ namespace Presentation.Application.Services
             await _personRepository.UpdatePersonAsync(personEntity);
         }
 
-        public async Task RemovePersonAsync(int? id)
+        public async Task DeletePersonAsync(int? id)
         {
             var personEntity = _personRepository.GetPersonByIdAsync(id).Result;
             await _personRepository.RemovePersonAsync(personEntity);

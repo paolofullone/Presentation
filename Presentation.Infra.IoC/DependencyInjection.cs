@@ -1,6 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Presentation.Application.Interfaces;
+using Presentation.Application.Mappings;
+using Presentation.Application.Services;
 using Presentation.Domain.Interfaces;
 using Presentation.Infra.Data.Context;
 using Presentation.Infra.Data.Repository;
@@ -17,6 +20,10 @@ namespace CleanArchMvc.Infra.IoC
 
             // segudo Macoratti a recomendação para aplicações web é AddScoped
             services.AddScoped<IPersonRepository, PersonRepository>();
+
+            // registro do PersonService e DomainToDTO
+            services.AddScoped<IPersonService, PersonService>();
+            services.AddAutoMapper(typeof(DomainToDTOMappingProfile));
 
             return services;
 

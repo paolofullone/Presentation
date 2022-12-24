@@ -13,6 +13,6 @@ namespace Presentation.Application.Interfaces
         Task<PersonDTO> GetPersonByIdAsync(int? id);
         Task AddPersonAsync(PersonDTO personDTO);
         Task UpdatePersonAsync(PersonDTO personDTO);
-        Task RemovePersonAsync(int? id);
+        Task DeletePersonAsync(int? id);
     }
 }

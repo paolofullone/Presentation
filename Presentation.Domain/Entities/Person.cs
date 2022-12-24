@@ -33,7 +33,7 @@ namespace Presentation.Domain.Entities
             DomainExceptionValidation.When(city.Length < 3, "The city is too short, minimum 3 characters");
             DomainExceptionValidation.When(string.IsNullOrEmpty(state), "The state is required");
             DomainExceptionValidation.When(state.Length > 2, "The state is too long, maximum 2 characters");
-            DomainExceptionValidation.When(linkedinUrl?.Length > 0 && !Uri.IsWellFormedUriString(linkedinUrl, UriKind.Absolute), "The linkedin url is invalid");
+            DomainExceptionValidation.When(!Uri.IsWellFormedUriString(linkedinUrl, UriKind.Absolute), "The linkedin url is invalid");
             DomainExceptionValidation.When(birhtDate > DateTime.Now, "The birth date is greater than the current date");
 
             DomainExceptionValidation.When(birhtDate > DateTime.Now, "The birthdate is invalid");
