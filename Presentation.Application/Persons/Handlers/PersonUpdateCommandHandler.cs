@@ -23,7 +23,7 @@ namespace Presentation.Application.Persons.Handlers
             }
             else
             {
-                person.Update(request.FullName, request.Email, request.City, request.State, request.LinkedinUrl, request.BirthDate);
+                person.Update(request.FullName, request.Email, request.Password, request.City, request.State, request.LinkedinUrl, request.BirthDate);
                 return await _personRepository.UpdatePersonAsync(person);
             }
         }

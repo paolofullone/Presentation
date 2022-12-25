@@ -15,10 +15,5 @@ namespace Presentation.Infra.Data.Context
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
         }
-        //protected override void OnModelCreating(ModelBuilder builder)
-        //{
-        //    base.OnModelCreating(builder);
-        //    builder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
-        //}
     }
 }

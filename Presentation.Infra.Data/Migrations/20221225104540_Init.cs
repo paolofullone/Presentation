@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Presentation.Infra.Data.Migrations
 {
-    public partial class Inicial : Migration
+    public partial class Init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -17,6 +17,7 @@ namespace Presentation.Infra.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     FullName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     City = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     State = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LinkedinUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -29,8 +30,8 @@ namespace Presentation.Infra.Data.Migrations
 
             migrationBuilder.InsertData(
                 table: "Persons",
-                columns: new[] { "Id", "BirthDate", "City", "Email", "FullName", "LinkedinUrl", "State" },
-                values: new object[] { 1, new DateTime(1978, 8, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), "Coronel Fabriciano", "paolo.fullone@xpi.com.br", "Paolo Fullone", "https://www.linkedin.com/in/paolofullone/", "MG" });
+                columns: new[] { "Id", "BirthDate", "City", "Email", "FullName", "LinkedinUrl", "Password", "State" },
+                values: new object[] { 1, new DateTime(1978, 8, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), "Coronel Fabriciano", "paolo.fullone@xpi.com.br", "Paolo Fullone", "https://www.linkedin.com/in/paolofullone/", "Password123", "MG" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

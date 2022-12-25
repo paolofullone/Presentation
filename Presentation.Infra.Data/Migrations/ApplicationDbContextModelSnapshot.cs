@@ -50,6 +50,10 @@ namespace Presentation.Infra.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("State")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -67,6 +71,7 @@ namespace Presentation.Infra.Data.Migrations
                             Email = "paolo.fullone@xpi.com.br",
                             FullName = "Paolo Fullone",
                             LinkedinUrl = "https://www.linkedin.com/in/paolofullone/",
+                            Password = "Password123",
                             State = "MG"
                         });
                 });
