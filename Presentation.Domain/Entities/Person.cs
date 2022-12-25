@@ -4,12 +4,12 @@ namespace Presentation.Domain.Entities
 {
     public sealed class Person : Entity
     {
-        public string FullName { get; set; } = string.Empty;
-        public string Email { get; set; } = string.Empty;
-        public string City { get; set; } = string.Empty;
-        public string State { get; set; } = string.Empty;
-        public string LinkedinUrl { get; set; } = string.Empty;
-        public DateTime BirthDate { get; set; }
+        public string FullName { get; private set; } = string.Empty;
+        public string Email { get; private set; } = string.Empty;
+        public string City { get; private set; } = string.Empty;
+        public string State { get; private set; } = string.Empty;
+        public string LinkedinUrl { get; private set; } = string.Empty;
+        public DateTime BirthDate { get; private set; }
 
         public Person(string fullName, string email, string city, string state, string linkedinUrl, DateTime birthDate)
         {
@@ -21,6 +21,12 @@ namespace Presentation.Domain.Entities
             DomainExceptionValidation.When(id < 0, "Invalid id value");
             Id = id;
             ValidateDomain(fullName, email, city, state, linkedinUrl, birhtDate);
+        }
+
+        // método usado no mapping do mediatr no projeto application para atualizar os dados, pois o set é privado
+        public void Update(string fullName, string email, string city, string state, string linkedinUrl, DateTime birthDate)
+        {
+            ValidateDomain(fullName, email, city, state, linkedinUrl, birthDate);
         }
 
         private void ValidateDomain(string fullName, string email, string city, string state, string linkedinUrl, DateTime birhtDate)

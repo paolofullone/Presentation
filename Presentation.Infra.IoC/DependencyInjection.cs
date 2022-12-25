@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using MediatR;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Presentation.Application.Interfaces;
@@ -24,6 +25,10 @@ namespace CleanArchMvc.Infra.IoC
             // registro do PersonService e DomainToDTO
             services.AddScoped<IPersonService, PersonService>();
             services.AddAutoMapper(typeof(DomainToDTOMappingProfile));
+
+            // registrando o serviço do mediatr
+            var myHandlers = AppDomain.CurrentDomain.Load("Presentation.Application");
+            services.AddMediatR(myHandlers);
 
             return services;
 
