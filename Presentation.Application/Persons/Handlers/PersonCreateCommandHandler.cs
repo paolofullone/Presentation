@@ -16,7 +16,7 @@ namespace Presentation.Application.Persons.Handlers
 
         public async Task<Person> Handle(PersonCreateCommand request, CancellationToken cancellationToken)
         {
-            var person = new Person(request.FullName, request.Email, request.Password, request.City, request.State, request.LinkedinUrl, request.BirthDate);
+            var person = new Person(request.Email, request.Password);
 
             if (person == null)
             {

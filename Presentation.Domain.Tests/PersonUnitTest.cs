@@ -9,7 +9,7 @@ namespace Presentation.Domain.Tests
         [Fact(DisplayName = "Create Person with valid State")]
         public void CreatePerson_WithValidParameters_ResultObjectValidState()
         {
-            Action action = () => new Person(fullName: "Paolo Fullone", email: "paolo.fullone@xpi.com.br", password: "Password123", city: "Coronel Fabriciano", state: "MG", linkedinUrl: "https://www.linkedin.com/in/paolofullone/", birthDate: new DateTime(1978, 08, 10));
+            Action action = () => new Person(email: "paolo.fullone@xpi.com.br", password: "Password123");
 
             action.Should().NotThrow<DomainExceptionValidation>();
         }
@@ -17,7 +17,7 @@ namespace Presentation.Domain.Tests
         [Fact(DisplayName = "Create Person with invalid State")]
         public void CreatePerson_WithInvalidState_ThrowsDomainExceptionValidation()
         {
-            Action action = () => new Person(fullName: "Paolo Fullone", email: "paolo.fullone@xpi.com.br", password: "Password123", city: "Coronel Fabriciano", state: "Minas Gerais", linkedinUrl: "https://www.linkedin.com/in/paolofullone/", birthDate: new DateTime(1978, 08, 10));
+            Action action = () => new Person(email: "paolo.fullone@xpi.com.br", password: "Password123");
 
             action.Should().Throw<DomainExceptionValidation>().WithMessage("The state is too long, maximum 2 characters");
         }
@@ -25,7 +25,7 @@ namespace Presentation.Domain.Tests
         [Fact(DisplayName = "Create Person with invalid Id")]
         public void CreatePerson_WithInvalidId_ThrowsDomainExceptionValidation()
         {
-            Action action = () => new Person(id: -1, fullName: "Paolo Fullone", email: "paolo.fullone@xpi.com.br", password: "Password123", city: "Coronel Fabriciano", state: "Minas Gerais", linkedinUrl: "https://www.linkedin.com/in/paolofullone/", birhtDate: new DateTime(1978, 08, 10));
+            Action action = () => new Person(id: -1, email: "paolo.fullone@xpi.com.br", password: "Password123");
 
             action.Should().Throw<DomainExceptionValidation>().WithMessage("Invalid id value");
         }

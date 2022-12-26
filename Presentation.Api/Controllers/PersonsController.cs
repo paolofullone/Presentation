@@ -79,7 +79,7 @@ namespace Presentation.Api.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [HttpDelete("{id:int}")]
+        [HttpDelete("{id:int}")]    
         public async Task<ActionResult> DeletePersonAsync(int id)
         {
             var person = await _personService.GetPersonByIdAsync(id);

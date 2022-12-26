@@ -21,9 +21,11 @@ namespace CleanArchMvc.Infra.IoC
 
             // segudo Macoratti a recomendação para aplicações web é AddScoped
             services.AddScoped<IPersonRepository, PersonRepository>();
+            services.AddScoped<IPersonalInfoRepository, PersonalInfoRepository>();
 
             // registro do PersonService e DomainToDTO
             services.AddScoped<IPersonService, PersonService>();
+            services.AddScoped<IPersonalInfoService, PersonalInfoService>();
             services.AddAutoMapper(typeof(DomainToDTOMappingProfile));
 
             // registrando o serviço do mediatr

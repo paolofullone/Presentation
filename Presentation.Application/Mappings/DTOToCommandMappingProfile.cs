@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Presentation.Application.DTOs;
+using Presentation.Application.PersonalInfos.Commands;
 using Presentation.Application.Persons.Commands;
 
 namespace Presentation.Application.Mappings
@@ -10,6 +11,9 @@ namespace Presentation.Application.Mappings
         {
             CreateMap<PersonDTO, PersonCreateCommand>();
             CreateMap<PersonDTO, PersonUpdateCommand>();
+
+            CreateMap<PersonalInfoDTO, PersonalInfoCreateCommand>();
+            CreateMap<PersonalInfoDTO, PersonalInfoUpdateCommand>();
         }
     }
 }

@@ -10,6 +10,7 @@ namespace Presentation.Infra.Data.Context
         }
 
         public DbSet<Person>? Persons { get; set; }
+        public DbSet<PersonalInfo>? PersonalInfos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

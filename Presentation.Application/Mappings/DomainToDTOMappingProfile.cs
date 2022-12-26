@@ -9,6 +9,7 @@ namespace Presentation.Application.Mappings
         public DomainToDTOMappingProfile()
         {
             CreateMap<Person, PersonDTO>().ReverseMap();
+            CreateMap<PersonalInfo, PersonalInfoDTO>().ReverseMap();
         }
 
     }

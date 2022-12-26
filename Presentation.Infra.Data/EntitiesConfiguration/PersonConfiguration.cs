@@ -9,18 +9,16 @@ namespace Presentation.Infra.Data.EntitiesConfiguration
     {
         public void Configure(EntityTypeBuilder<Person> builder)
         {
-            builder.HasKey(p => p.Id);
-            builder.Property(p => p.FullName).HasMaxLength(100).IsRequired();
+            builder.HasKey(t => t.Id);
             builder.Property(p => p.Email).IsRequired();
             builder.Property(p => p.Password).IsRequired();
-            builder.Property(p => p.City).IsRequired();
-            builder.Property(p => p.State).IsRequired();
-            builder.Property(p => p.LinkedinUrl).IsRequired();
-            builder.Property(p => p.BirthDate).IsRequired();
 
-            builder.HasData(
-                new Person(1, "Paolo Fullone", "paolo.fullone@xpi.com.br", "Password123", "Coronel Fabriciano", "MG", "https://www.linkedin.com/in/paolofullone/", new DateTime(1978, 08, 10))
-                );
+            builder.HasOne(p => p.PersonalInfo)
+                .WithOne(p => p.Person)
+                .HasForeignKey<PersonalInfo>(p => p.Id);
+
+            // TODO: passar o personId aqui também, por enquanto está gerando a migration com null e estou inserindo manualmente.
+            builder.HasData(new Person(1, "paolo.fullone@xpi.com.br", "Password123"));
         }
     }
 }
