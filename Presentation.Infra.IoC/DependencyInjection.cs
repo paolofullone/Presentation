@@ -23,7 +23,7 @@ namespace CleanArchMvc.Infra.IoC
             services.AddScoped<IPersonRepository, PersonRepository>();
             services.AddScoped<IPersonalInfoRepository, PersonalInfoRepository>();
 
-            // registro do PersonService e DomainToDTO
+            // registro do PersonService, PersonalInfoService e DomainToDTO
             services.AddScoped<IPersonService, PersonService>();
             services.AddScoped<IPersonalInfoService, PersonalInfoService>();
             services.AddAutoMapper(typeof(DomainToDTOMappingProfile));

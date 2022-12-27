@@ -16,7 +16,7 @@ namespace Presentation.Application.PersonalInfos.Handlers
 
         public async Task<PersonalInfo> Handle(PersonalInfoCreateCommand request, CancellationToken cancellationToken)
         {
-            var personalInfo = new PersonalInfo(request.FullName, request.City, request.State, request.BirthDate, request.MaritalStatus, request.Animals, request.FavoriteFood, request.FavoriteMusic, request.FavoriteMovie, request.FavoriteTVShow, request.FavoriteBook, request.FavoriteSport, request.LinkedinUrl, request.PersonId);
+            var personalInfo = new PersonalInfo(request.FullName, request.MaritalStatus, request.Children, request.BirthDate, request.City, request.State, request.Animals, request.FavoriteFood, request.FavoriteMusic, request.FavoriteMovie, request.FavoriteTVShow, request.FavoriteBook, request.FavoriteSport, request.LinkedinUrl, request.PersonId);
 
             if (personalInfo == null)
             {

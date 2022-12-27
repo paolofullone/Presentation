@@ -7,10 +7,11 @@ namespace Presentation.Application.PersonalInfos.Commands
     public abstract class PersonalInfoCommand : IRequest<PersonalInfo>
     {
         public string FullName { get; private set; } = string.Empty;
+        public MaritalStatus MaritalStatus { get; private set; }
+        public Children Children { get; private set; }
+        public DateTime BirthDate { get; private set; }
         public string City { get; private set; } = string.Empty;
         public string State { get; private set; } = string.Empty;
-        public DateTime BirthDate { get; private set; }
-        public MaritalStatus MaritalStatus { get; private set; }
         public string Animals { get; private set; } = string.Empty;
         public string FavoriteFood { get; private set; } = string.Empty;
         public string FavoriteMusic { get; private set; } = string.Empty;

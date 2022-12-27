@@ -30,7 +30,7 @@ namespace Presentation.Infra.Data.EntitiesConfiguration
 
             builder.HasData(
                             new PersonalInfo(
-                                id: 1, fullName: "Paolo Enrico Iacono Fullone", city: "Coronel Fabriciano", state: "MG", birthDate: new DateTime(1978, 08, 10), maritalStatus: MaritalStatus.Married,
+                                id: 1, fullName: "Paolo Enrico Iacono Fullone", city: "Coronel Fabriciano", state: "MG", birthDate: new DateTime(1978, 08, 10), maritalStatus: MaritalStatus.Married, children: Children.Two,
                                 animals: "2 cachorros, 2(n) coelhos", favoriteFood: "Churrasco", favoriteMusic: "Depende", favoriteMovie: "Interstellar", favoriteTVShow: "Dark", favoriteBook: "Ponto de Inflexão", favoriteSport: "Tenis", linkedinUrl: "https://www.linkedin.com/in/paolofullone/", personId: 1)
                             );
         }

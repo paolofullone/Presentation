@@ -22,7 +22,7 @@ namespace Presentation.Application.PersonalInfos.Handlers
             }
             else
             {
-                personalInfo.Update(request.FullName, request.City, request.State, request.BirthDate, request.MaritalStatus, request.Animals, request.FavoriteFood, request.FavoriteMusic, request.FavoriteMovie, request.FavoriteTVShow, request.FavoriteBook, request.FavoriteSport, request.LinkedinUrl, request.PersonId);
+                personalInfo.Update(request.FullName, request.MaritalStatus, request.Children, request.BirthDate, request.City, request.State, request.Animals, request.FavoriteFood, request.FavoriteMusic, request.FavoriteMovie, request.FavoriteTVShow, request.FavoriteBook, request.FavoriteSport, request.LinkedinUrl, request.PersonId);
                 return await _personalInfoRepository.UpdatePersonalInfoAsync(personalInfo);
             }
         }

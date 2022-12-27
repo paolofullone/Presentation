@@ -8,10 +8,20 @@ namespace Presentation.Application.DTOs
         public int Id { get; set; }
         [Required(ErrorMessage = "The name is required.")]
         public string FullName { get; set; } = string.Empty;
-        [Required(ErrorMessage = "The City is required.")]
-        public string City { get; set; } = string.Empty;
-        [Required(ErrorMessage = "The state is required.")]
-        public string State { get; set; } = string.Empty;
+        [Required(ErrorMessage = "The marital status is required")]
+        public MaritalStatus MaritalStatus { get; set; }
+        [Required(ErrorMessage = "Please inform if you have childrens")]
+        // method to show string of marital status instead of integer
+        public string MaritalStatusString
+        {
+            get
+            {
+                return MaritalStatus.ToString();
+            }
+        }
+
+
+        public Children Children { get; set; }
         [Required(ErrorMessage = "The birthdate is required.")]
         public DateTime BirthDate { get; set; }
 
@@ -25,8 +35,10 @@ namespace Presentation.Application.DTOs
                 return age;
             }
         }
-        [Required(ErrorMessage = "The marital status is required")]
-        public MaritalStatus MaritalStatus { get; set; }
+        [Required(ErrorMessage = "The City is required.")]
+        public string City { get; set; } = string.Empty;
+        [Required(ErrorMessage = "The state is required.")]
+        public string State { get; set; } = string.Empty;
         [Required(ErrorMessage = "Please inform if you have animals")]
         public string Animals { get; set; } = string.Empty;
         [Required(ErrorMessage = "The Favorite Food is required")]
